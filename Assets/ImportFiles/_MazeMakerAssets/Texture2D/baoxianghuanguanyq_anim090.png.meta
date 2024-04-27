@@ -1,0 +1,282 @@
+fileFormatVersion: 2
+guid: 3c45b5506b8009f4c98f695eb3ad297a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: baoxianghuanguanyq_anim090
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 4
+  maxTextureSize: 595
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: baoxianghuanguanyq_anim090
+      rect:
+        serializedVersion: 2
+        x: 3.026751
+        y: 66.07612
+        width: 468.94647
+        height: 403.84778
+      alignment: 9
+      pivot: {x: 0.5245231, y: 0.57304734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -213.49998, y: -160}
+        - {x: -222.49997, y: -152}
+        - {x: -222.49997, y: -134}
+        - {x: -234.49998, y: -131}
+        - {x: -234.49998, y: -95}
+        - {x: -93.49998, y: -45}
+        - {x: -78.499985, y: 20}
+        - {x: -85.499985, y: 17}
+        - {x: -107.49999, y: 18}
+        - {x: -129.49998, y: 43}
+        - {x: -131.49998, y: 71}
+        - {x: -120.499985, y: 97}
+        - {x: -104.499985, y: 109}
+        - {x: -85.499985, y: 113}
+        - {x: -57.499985, y: 140}
+        - {x: -50.499985, y: 168}
+        - {x: -49.499985, y: 175}
+        - {x: -43.499985, y: 179}
+        - {x: 20.500015, y: 179}
+        - {x: 27.500015, y: 198}
+        - {x: 65.500015, y: 202}
+        - {x: 81.500015, y: 202}
+        - {x: 92.500015, y: 200}
+        - {x: 125.500015, y: 187}
+        - {x: 134.50002, y: 176}
+        - {x: 203.50002, y: 171}
+        - {x: 212.50002, y: 160}
+        - {x: 211.50002, y: 138}
+        - {x: 224.50003, y: 111}
+        - {x: 234.50002, y: 77}
+        - {x: 234.50002, y: 26}
+        - {x: 229.50002, y: 17}
+        - {x: 216.50002, y: -34}
+        - {x: 199.50002, y: -62}
+        - {x: 171.50002, y: -84}
+        - {x: 158.50002, y: -105}
+        - {x: 146.50002, y: -132}
+        - {x: 140.50002, y: -141}
+        - {x: 110.500015, y: -157}
+        - {x: 76.500015, y: -157}
+        - {x: 76.500015, y: -177}
+        - {x: 38.500015, y: -202}
+        - {x: 19.500015, y: -202}
+        - {x: -43.499985, y: -189}
+        - {x: -68.499985, y: -178}
+        - {x: -142.49998, y: -163}
+        - {x: -147.49998, y: -167}
+      physicsShape:
+      - - {x: 85.500015, y: -152}
+        - {x: 105.500015, y: -155.99998}
+        - {x: 113.500015, y: -154.99998}
+        - {x: 135.50002, y: -141}
+        - {x: 144.50002, y: -135}
+        - {x: 148.50002, y: -114}
+        - {x: 154.50002, y: -109}
+        - {x: 157.5, y: -102}
+        - {x: 156.50002, y: -83}
+        - {x: 155.50002, y: -80}
+        - {x: 169.50002, y: -81}
+        - {x: 174.50002, y: -76.99999}
+        - {x: 176.50002, y: -71}
+        - {x: 188.50002, y: -68}
+        - {x: 194.50002, y: -62.999992}
+        - {x: 202.50002, y: -54}
+        - {x: 207.5, y: -46}
+        - {x: 210.50002, y: -39}
+        - {x: 215.50002, y: -29.999996}
+        - {x: 222.5, y: -2}
+        - {x: 224.5, y: 8.000002}
+        - {x: 225.5, y: 18}
+        - {x: 231.50002, y: 22}
+        - {x: 233.50002, y: 28}
+        - {x: 233.50002, y: 40}
+        - {x: 231.50002, y: 54}
+        - {x: 232.50002, y: 62.999996}
+        - {x: 232.50002, y: 75}
+        - {x: 230.50002, y: 80}
+        - {x: 227.5, y: 86}
+        - {x: 225.5, y: 102}
+        - {x: 221.5, y: 113}
+        - {x: 210.50002, y: 139}
+        - {x: 211.50002, y: 159}
+        - {x: 205.50002, y: 165}
+        - {x: 198.50002, y: 170}
+        - {x: 175.50002, y: 171}
+        - {x: 151.50002, y: 172}
+        - {x: 129.5, y: 177}
+        - {x: 123.500015, y: 184}
+        - {x: 110.50001, y: 191}
+        - {x: 96.500015, y: 193}
+        - {x: 90.500015, y: 198}
+        - {x: 82.500015, y: 200}
+        - {x: 63.500015, y: 200}
+        - {x: 46.500015, y: 198}
+        - {x: 31.500013, y: 196}
+        - {x: 24.500015, y: 188.99998}
+        - {x: 22.500015, y: 175.99998}
+        - {x: -19.499985, y: 175.99998}
+        - {x: -19.499985, y: 178}
+        - {x: -45.499985, y: 177}
+        - {x: -47.49998, y: 174}
+        - {x: -51.499985, y: 158}
+        - {x: -61.499977, y: 105}
+        - {x: -63.499985, y: 95}
+        - {x: -70.499985, y: 104}
+        - {x: -82.499985, y: 108.99999}
+        - {x: -97.499985, y: 108}
+        - {x: -105.49998, y: 105}
+        - {x: -112.499985, y: 100}
+        - {x: -120.499985, y: 92}
+        - {x: -125.499985, y: 79}
+        - {x: -128.49998, y: 67}
+        - {x: -126.499985, y: 53}
+        - {x: -124.499985, y: 46}
+        - {x: -120.499985, y: 37}
+        - {x: -111.499985, y: 27}
+        - {x: -104.499985, y: 23}
+        - {x: -99.499985, y: 20}
+        - {x: -82.499985, y: 20}
+        - {x: -77.499985, y: 19}
+        - {x: -84.499985, y: -21}
+        - {x: -86.49998, y: -33}
+        - {x: -86.49998, y: -42}
+        - {x: -89.499985, y: -46}
+        - {x: -101.499985, y: -51}
+        - {x: -192.49998, y: -82}
+        - {x: -215.49998, y: -89.99999}
+        - {x: -229.49997, y: -95}
+        - {x: -232.49998, y: -99}
+        - {x: -233.49998, y: -103}
+        - {x: -233.49998, y: -124}
+        - {x: -228.49997, y: -129.99998}
+        - {x: -219.49998, y: -132}
+        - {x: -219.49998, y: -149}
+        - {x: -217.49998, y: -153}
+        - {x: -210.49998, y: -154.99998}
+        - {x: -169.49998, y: -163}
+        - {x: -157.49998, y: -165}
+        - {x: -149.49998, y: -165}
+        - {x: -140.49998, y: -162}
+        - {x: -125.499985, y: -165}
+        - {x: -56.499985, y: -178}
+        - {x: -50.499985, y: -179}
+        - {x: -46.499985, y: -184}
+        - {x: -41.49998, y: -188}
+        - {x: 2.5000153, y: -195.99998}
+        - {x: 23.500015, y: -199.99998}
+        - {x: 35.500015, y: -199.99998}
+        - {x: 65.500015, y: -184}
+        - {x: 75.500015, y: -176}
+        - {x: 75.500015, y: -157}
+      - - {x: -94.49998, y: 71}
+        - {x: -92.499985, y: 74}
+        - {x: -91.499985, y: 76}
+        - {x: -88.499985, y: 76}
+        - {x: -90.499985, y: 76}
+        - {x: -94.49998, y: 72}
+        - {x: -97.499985, y: 65}
+        - {x: -96.49998, y: 62}
+        - {x: -95.49998, y: 62.999996}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fcc0294bc0847b98558a35c66d16d30
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      baoxianghuanguanyq_anim090: 21300000
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

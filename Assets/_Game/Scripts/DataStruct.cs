@@ -12,4 +12,18 @@ namespace VANH.StackMaker
         Forward,
         Backward
     }
+
+    public enum GameLayer
+    {
+        None,
+        Wall
+    }
+
+    public enum GameTag
+    {
+        None,
+        Wall,
+        Brick,
+        UnBrick
+    }
 }

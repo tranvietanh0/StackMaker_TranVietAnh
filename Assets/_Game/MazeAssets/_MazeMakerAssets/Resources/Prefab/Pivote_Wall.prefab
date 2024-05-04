@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4585070549765595}
   - component: {fileID: 33150582636411261}
   - component: {fileID: 23054566729670232}
-  - component: {fileID: 1747002942154897524}
+  - component: {fileID: 3515351579123368300}
   m_Layer: 3
   m_Name: zhangaikuai
   m_TagString: Wall
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1747002942154897524
+--- !u!65 &3515351579123368300
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +104,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1.0000002, z: 0.04877422}
-  m_Center: {x: 0, y: 0, z: -0.02438723}
+  m_Center: {x: 0, y: 0, z: -0.02438711}
 --- !u!1 &1121066348938118
 GameObject:
   m_ObjectHideFlags: 0

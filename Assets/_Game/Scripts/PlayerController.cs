@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace VANH.StackMaker
@@ -12,7 +13,8 @@ namespace VANH.StackMaker
         
         [SerializeField] private Direction m_direction;
         private Vector2 m_startMousePos, m_endMousePos;
-
+        private Vector3 targetPos;
+        private Vector3 lastPos;
         private void Start()
         {
             
@@ -23,6 +25,7 @@ namespace VANH.StackMaker
             CheckInput();
             Move();
         }
+        
 
         private void CheckInput()
         {
@@ -59,23 +62,27 @@ namespace VANH.StackMaker
                 }
             }
         }
-
         private void Move()
         {
             Vector3 vectorDirection = GetDirection(m_direction);
-            Ray ray = new Ray(transform.position, vectorDirection.normalized);
+            Ray ray = new Ray(transform.position + vectorDirection * 0.5f, Vector3.down);
             RaycastHit hit;
+            int countBrick = 0;
+            int countUnBrick = 0;
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.CompareTag("Wall"))
+                Debug.DrawRay(transform.position + vectorDirection,Vector3.up * 5f, Color.red);
+                if (hit.collider.CompareTag(GameTag.Brick.ToString()))
                 {
-                    Debug.Log("cham tuong");
+                    countBrick++;
                 }
-                Debug.DrawRay(transform.position, transform.position + vectorDirection, Color.red);
-                Vector3 nextPos = Vector3.MoveTowards(transform.position, transform.position + vectorDirection,
-                    moveSpeed * Time.deltaTime);
-                transform.position = nextPos;
+                else if(hit.collider.CompareTag(GameTag.UnBrick.ToString()))
+                {
+                    countUnBrick++;
+                }
             }
+            targetPos = transform.position + (countBrick + countUnBrick) * vectorDirection ;
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
         }
 
         private Vector3 GetDirection(Direction dir)

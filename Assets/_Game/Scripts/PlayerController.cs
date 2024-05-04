@@ -14,7 +14,6 @@ namespace VANH.StackMaker
         [SerializeField] private Direction m_direction;
         private Vector2 m_startMousePos, m_endMousePos;
         private Vector3 targetPos;
-        private Vector3 lastPos;
         private void Start()
         {
             

@@ -24,6 +24,7 @@ namespace VANH.StackMaker
         None,
         Wall,
         Brick,
-        UnBrick
+        UnBrick,
+        Finish
     }
 }

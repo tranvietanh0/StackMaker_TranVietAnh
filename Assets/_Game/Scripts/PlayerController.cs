@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -12,8 +13,13 @@ namespace VANH.StackMaker
         [SerializeField] private float moveSpeed = 5f;
         
         [SerializeField] private Direction m_direction;
+
+        [SerializeField] private GameObject brickPrefab;
+        [SerializeField] private GameObject player;
         private Vector2 m_startMousePos, m_endMousePos;
         private Vector3 targetPos;
+        private Stack<GameObject> brickStack = new Stack<GameObject>();
+        
         private void Start()
         {
             
@@ -23,6 +29,10 @@ namespace VANH.StackMaker
         {
             CheckInput();
             Move();
+            if (CheckBrick())
+            {
+                AddBrick();
+            }
         }
         
 
@@ -68,6 +78,7 @@ namespace VANH.StackMaker
             RaycastHit hit;
             int countBrick = 0;
             int countUnBrick = 0;
+            int countPath = 0;
             if (Physics.Raycast(ray, out hit))
             {
                 Debug.DrawRay(transform.position + vectorDirection,Vector3.up * 5f, Color.red);
@@ -79,10 +90,43 @@ namespace VANH.StackMaker
                 {
                     countUnBrick++;
                 }
+                else if(hit.collider.CompareTag(GameTag.Finish.ToString()))
+                {
+                    countPath++;
+                }
             }
-            targetPos = transform.position + (countBrick + countUnBrick) * vectorDirection ;
+            targetPos = transform.position + (countBrick + countUnBrick + countPath) * vectorDirection;
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
         }
+
+        private bool CheckBrick()
+        {
+            Vector3 vectorDirection = GetDirection(m_direction);
+            Ray ray = new Ray(transform.position - vectorDirection, Vector3.down);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.CompareTag(GameTag.Brick.ToString()))
+                {
+                    hit.collider.gameObject.SetActive(false);
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        private void AddBrick()
+        {
+            Debug.Log("adu");
+            Transform brickChildPath = brickPrefab.gameObject.transform.GetChild(0);
+            GameObject playerAnim = player.transform.GetChild(0).gameObject;
+            playerAnim.transform.position += Vector3.up * 0.3f;
+            Transform brickObject = Instantiate(brickChildPath, playerAnim.transform.position + Vector3.down,
+                brickChildPath.transform.rotation);
+            brickObject.SetParent(player.transform);
+            brickChildPath.gameObject.SetActive(true);
+        }
+        
 
         private Vector3 GetDirection(Direction dir)
         {

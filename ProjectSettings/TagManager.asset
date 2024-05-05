@@ -8,6 +8,8 @@ TagManager:
   - Brick
   - Push
   - Wall
+  - Destination
+  - Slow
   layers:
   - Default
   - TransparentFX

@@ -17,13 +17,9 @@ namespace VANH.StackMaker
         [SerializeField] private GameObject brickPrefab;
         [SerializeField] private GameObject player;
         private Vector2 m_startMousePos, m_endMousePos;
-        private Vector3 targetPos;
-        private Stack<Transform> brickStack = new Stack<Transform>();
+        private Vector3 m_targetPos;
+        private Stack<Transform> m_brickStack = new Stack<Transform>();
         
-        private void Start()
-        {
-            
-        }
 
         private void Update()
         {
@@ -105,8 +101,8 @@ namespace VANH.StackMaker
                 }
             }
             //tim target sau moi lan di chuyen
-            targetPos = transform.position + (countBrick + countUnBrick + countPath) * vectorDirection;
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
+            m_targetPos = transform.position + (countBrick + countUnBrick + countPath) * vectorDirection;
+            transform.position = Vector3.MoveTowards(transform.position, m_targetPos, moveSpeed * Time.deltaTime);
         }
 
         private bool CheckBrick()
@@ -152,7 +148,7 @@ namespace VANH.StackMaker
             playerAnim.transform.position += Vector3.up * 0.3f;
             Transform brickObject = Instantiate(brickChildPath, playerAnim.transform.position + Vector3.down * 0.7f,
                 brickChildPath.transform.rotation);
-            brickStack.Push(brickObject);
+            m_brickStack.Push(brickObject);
             brickObject.SetParent(player.transform);
             brickChildPath.gameObject.SetActive(true);
         }
@@ -161,9 +157,9 @@ namespace VANH.StackMaker
         {
             Transform unBrickChild = brickPrefab.transform.GetChild(0);
             GameObject playerAnim = player.transform.GetChild(0).gameObject;
-            if (brickStack.Count > 0)
+            if (m_brickStack.Count > 0)
             {
-                GameObject destroyBrick = brickStack.Pop().gameObject;
+                GameObject destroyBrick = m_brickStack.Pop().gameObject;
                 Destroy(destroyBrick);
                 playerAnim.transform.position += Vector3.down * 0.3f;
                 unBrickChild.gameObject.SetActive(true);

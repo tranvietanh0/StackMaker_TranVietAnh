@@ -4,18 +4,36 @@ using UnityEngine;
 
 namespace VANH.StackMaker
 {
-    public class LevelManager : MonoBehaviour
+    public class LevelManager : GameObjectSingleton<LevelManager>
     {
-        // Start is called before the first frame update
-        void Start()
+        
+        [SerializeField]private List<GameObject> levelList = new List<GameObject>();
+
+        private void OnInit()
         {
+            if (levelList == null || levelList.Count <= 0)
+            {
+                return;
+            }
 
+            for (int i = 0; i < levelList.Count; i++)
+            {
+                GameObject level = levelList[i];
+                if (level == null)
+                {
+                    continue;
+                }
+
+                if (i == 0)
+                {
+                    // di vao level dau tien
+                }
+                else
+                {
+                    //check du lieu luu xuong may ng choi chua 
+                }
+            }
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        
     }
 }

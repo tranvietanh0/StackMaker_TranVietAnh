@@ -7471,7 +7471,7 @@ GameObject:
   - component: {fileID: 8723762633606169682}
   m_Layer: 8
   m_Name: di (3)
-  m_TagString: Untagged
+  m_TagString: UnBrick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22187,7 +22187,7 @@ GameObject:
   - component: {fileID: 1408717422081662326}
   m_Layer: 8
   m_Name: di (2)
-  m_TagString: Untagged
+  m_TagString: UnBrick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26236,7 +26236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4127882339869582
 Transform:
   m_ObjectHideFlags: 0
@@ -29393,7 +29393,7 @@ GameObject:
   - component: {fileID: 7295030689336441214}
   m_Layer: 8
   m_Name: zhongdian
-  m_TagString: Untagged
+  m_TagString: Destination
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33079,7 +33079,7 @@ GameObject:
   - component: {fileID: 2127979062595657090}
   m_Layer: 8
   m_Name: di
-  m_TagString: Untagged
+  m_TagString: UnBrick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46761,7 +46761,7 @@ GameObject:
   - component: {fileID: 769545614757523469}
   m_Layer: 8
   m_Name: di (1)
-  m_TagString: Untagged
+  m_TagString: UnBrick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

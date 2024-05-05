@@ -98,6 +98,11 @@ namespace VANH.StackMaker
                 {
                     countPath++;
                 }
+                else if (hit.collider.CompareTag(GameTag.Destination.ToString()))
+                {
+                    Debug.Log("win");
+                    RemoveBrick();
+                }
             }
             //tim target sau moi lan di chuyen
             targetPos = transform.position + (countBrick + countUnBrick + countPath) * vectorDirection;

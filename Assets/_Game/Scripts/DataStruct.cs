@@ -25,6 +25,8 @@ namespace VANH.StackMaker
         Wall,
         Brick,
         UnBrick,
-        Finish
+        Finish,
+        Destination,
+        Slow
     }
 }

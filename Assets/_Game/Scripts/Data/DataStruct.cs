@@ -29,4 +29,10 @@ namespace VANH.StackMaker
         Destination,
         Slow
     }
+
+    public enum GamePref
+    {
+        CurLevelId,
+        LevelUnlocked
+    }
 }

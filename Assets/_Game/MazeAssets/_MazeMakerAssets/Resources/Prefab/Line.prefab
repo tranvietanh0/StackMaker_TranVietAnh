@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33448905800756249}
   - component: {fileID: 23425944778256323}
   - component: {fileID: 8038638617205796367}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Line
   m_TagString: UnBrick
   m_Icon: {fileID: 0}

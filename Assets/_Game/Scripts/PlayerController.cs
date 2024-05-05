@@ -18,7 +18,7 @@ namespace VANH.StackMaker
         [SerializeField] private GameObject player;
         private Vector2 m_startMousePos, m_endMousePos;
         private Vector3 targetPos;
-        private Stack<GameObject> brickStack = new Stack<GameObject>();
+        private Stack<Transform> brickStack = new Stack<Transform>();
         
         private void Start()
         {
@@ -32,6 +32,10 @@ namespace VANH.StackMaker
             if (CheckBrick())
             {
                 AddBrick();
+            }
+            if(CheckUnBrick())
+            {
+                RemoveBrick();
             }
         }
         
@@ -95,6 +99,7 @@ namespace VANH.StackMaker
                     countPath++;
                 }
             }
+            //tim target sau moi lan di chuyen
             targetPos = transform.position + (countBrick + countUnBrick + countPath) * vectorDirection;
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
         }
@@ -114,20 +119,53 @@ namespace VANH.StackMaker
             }
             return false;
         }
+        private bool CheckUnBrick()
+        {
+            Vector3 vectorDirection = GetDirection(m_direction);
+            Ray ray = new Ray(transform.position - vectorDirection, Vector3.down);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.CompareTag(GameTag.UnBrick.ToString()))
+                {
+                    // doit tag gameobj thanh finish de k check collider lien tuc
+                    // hit.collider.enabled = !hit.collider.enabled;
+                    hit.collider.gameObject.tag = "Finish";
+                    return true;
+                    
+                }
+            }
+            return false;
+        }
         
         private void AddBrick()
         {
-            Debug.Log("adu");
+            //goi ra obj con cua prefab brick 
             Transform brickChildPath = brickPrefab.gameObject.transform.GetChild(0);
+            //lay ra anim
             GameObject playerAnim = player.transform.GetChild(0).gameObject;
             playerAnim.transform.position += Vector3.up * 0.3f;
-            Transform brickObject = Instantiate(brickChildPath, playerAnim.transform.position + Vector3.down,
+            Transform brickObject = Instantiate(brickChildPath, playerAnim.transform.position + Vector3.down * 0.7f,
                 brickChildPath.transform.rotation);
+            brickStack.Push(brickObject);
             brickObject.SetParent(player.transform);
             brickChildPath.gameObject.SetActive(true);
         }
-        
 
+        private void RemoveBrick()
+        {
+            Transform unBrickChild = brickPrefab.transform.GetChild(0);
+            GameObject playerAnim = player.transform.GetChild(0).gameObject;
+            if (brickStack.Count > 0)
+            {
+                GameObject destroyBrick = brickStack.Pop().gameObject;
+                Destroy(destroyBrick);
+                playerAnim.transform.position += Vector3.down * 0.3f;
+                unBrickChild.gameObject.SetActive(true);
+            }
+        }
+
+        //lay huong di chuyen
         private Vector3 GetDirection(Direction dir)
         {
             switch (dir)

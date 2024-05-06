@@ -135,7 +135,7 @@ namespace VANH.StackMaker
                 {
                     // doit tag gameobj thanh finish de k check collider lien tuc
                     // hit.collider.enabled = !hit.collider.enabled;
-                    Vector3 brickSpawnBridge = hit.transform.position + Vector3.up * 0.1f;
+                    Vector3 brickSpawnBridge = hit.transform.position + Vector3.up * 0.01f;
                     Instantiate(brickOnBridge, brickSpawnBridge, hit.transform.rotation);
                     hit.collider.gameObject.tag = "Finish";
                     return true;

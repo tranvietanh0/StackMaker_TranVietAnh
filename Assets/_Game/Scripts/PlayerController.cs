@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 namespace VANH.StackMaker
 {
@@ -16,6 +19,7 @@ namespace VANH.StackMaker
 
         [SerializeField] private GameObject brickPrefab;
         [SerializeField] private GameObject player;
+        [SerializeField] private GameObject brickOnBridge;
         private Vector2 m_startMousePos, m_endMousePos;
         private Vector3 m_targetPos;
         private Stack<Transform> m_brickStack = new Stack<Transform>();
@@ -131,9 +135,10 @@ namespace VANH.StackMaker
                 {
                     // doit tag gameobj thanh finish de k check collider lien tuc
                     // hit.collider.enabled = !hit.collider.enabled;
+                    Vector3 brickSpawnBridge = hit.transform.position + Vector3.up * 0.1f;
+                    Instantiate(brickOnBridge, brickSpawnBridge, hit.transform.rotation);
                     hit.collider.gameObject.tag = "Finish";
                     return true;
-                    
                 }
             }
             return false;
@@ -162,7 +167,7 @@ namespace VANH.StackMaker
                 GameObject destroyBrick = m_brickStack.Pop().gameObject;
                 Destroy(destroyBrick);
                 playerAnim.transform.position += Vector3.down * 0.3f;
-                unBrickChild.gameObject.SetActive(true);
+                unBrickChild.gameObject.SetActive(true);    
             }
         }
 
@@ -181,6 +186,11 @@ namespace VANH.StackMaker
                     return Vector3.forward;
                 default: return Vector3.zero;
             }
+        }
+
+        public void SetStartPosition(Transform mapStartPosition)
+        {
+            transform.position = mapStartPosition.position;
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Numerics;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
@@ -13,7 +14,8 @@ namespace VANH.StackMaker
     public class PlayerController : MonoBehaviour
     {
         public static PlayerController Instance { get; private set; }
-
+        public List<GameObject> Bricks = new List<GameObject>();
+        
         [SerializeField] private float moveSpeed = 5f;
         
         [SerializeField] private Direction m_direction;
@@ -26,7 +28,14 @@ namespace VANH.StackMaker
         private Vector3 m_targetPos;
         private Stack<Transform> m_brickStack = new Stack<Transform>();
         private bool isFinish = false;
-        public List<GameObject> Bricks = new List<GameObject>();
+        public int score = 0;
+
+        // public int Score
+        // {
+        //     get => score;
+        // }
+
+
         private void Awake() 
         {     
             if (Instance != null && Instance != this) 
@@ -51,6 +60,7 @@ namespace VANH.StackMaker
             {
                 player.gameObject.transform.GetChild(0).gameObject.tag = GameTag.Player.ToString();
                 AddBrick();
+                score = m_brickStack.Count;
             }
             if(CheckUnBrick())
             {

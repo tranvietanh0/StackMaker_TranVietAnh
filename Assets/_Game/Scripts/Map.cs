@@ -6,6 +6,6 @@ namespace VANH.StackMaker
 {
     public class Map : MonoBehaviour
     {
-        [field: SerializeField] public Transform StartPosition { get; }
+        [SerializeField] public Transform StartPosition;
     }
 }

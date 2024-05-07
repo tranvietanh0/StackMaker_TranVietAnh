@@ -20,11 +20,16 @@ namespace VANH.StackMaker
         [SerializeField] private GameObject brickPrefab;
         [SerializeField] private GameObject player;
         [SerializeField] private GameObject brickOnBridge;
+        
         private Vector2 m_startMousePos, m_endMousePos;
         private Vector3 m_targetPos;
         private Stack<Transform> m_brickStack = new Stack<Transform>();
-        
+        private bool isFinish = false;
 
+        private void Start()
+        {
+            
+        }
         private void Update()
         {
             CheckInput();
@@ -100,8 +105,8 @@ namespace VANH.StackMaker
                 }
                 else if (hit.collider.CompareTag(GameTag.Destination.ToString()))
                 {
-                    Debug.Log("win");
                     RemoveBrick();
+                    Debug.Log("win");
                 }
             }
             //tim target sau moi lan di chuyen

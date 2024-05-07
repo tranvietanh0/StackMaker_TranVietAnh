@@ -22,6 +22,7 @@ namespace VANH.StackMaker
     public enum GameTag
     {
         None,
+        Player,
         Wall,
         Brick,
         UnBrick,

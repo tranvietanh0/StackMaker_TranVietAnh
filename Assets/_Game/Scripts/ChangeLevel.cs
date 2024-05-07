@@ -20,7 +20,9 @@ namespace VANH.StackMaker
             {
                 if (hit.collider.CompareTag(GameTag.Player.ToString()))
                 {
+                    PlayerController.Instance.OnInit();
                     LevelManager.Instance().LoadLevel(1);
+                    LevelManager.Instance().PositionPlayer();
                 }
             }
         }

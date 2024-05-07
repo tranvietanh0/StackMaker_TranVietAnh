@@ -12,6 +12,7 @@ namespace VANH.StackMaker
 {
     public class PlayerController : MonoBehaviour
     {
+        public static PlayerController Instance { get; private set; }
 
         [SerializeField] private float moveSpeed = 5f;
         
@@ -25,6 +26,18 @@ namespace VANH.StackMaker
         private Vector3 m_targetPos;
         private Stack<Transform> m_brickStack = new Stack<Transform>();
         private bool isFinish = false;
+        public List<GameObject> Bricks = new List<GameObject>();
+        private void Awake() 
+        {     
+            if (Instance != null && Instance != this) 
+            { 
+                Destroy(this); 
+            } 
+            else 
+            { 
+                Instance = this; 
+            } 
+        }
 
         private void Start()
         {
@@ -43,7 +56,11 @@ namespace VANH.StackMaker
                 RemoveBrick();
             }
         }
-        
+
+        public void OnInit()
+        {
+            m_direction = Direction.None;
+        }
 
         private void CheckInput()
         {
@@ -141,7 +158,7 @@ namespace VANH.StackMaker
                     // doit tag gameobj thanh finish de k check collider lien tuc
                     // hit.collider.enabled = !hit.collider.enabled;
                     Vector3 brickSpawnBridge = hit.transform.position + Vector3.up * 0.01f;
-                    Instantiate(brickOnBridge, brickSpawnBridge, hit.transform.rotation);
+                    Bricks.Add(Instantiate(brickOnBridge, brickSpawnBridge, hit.transform.rotation));
                     hit.collider.gameObject.tag = "Finish";
                     return true;
                 }
@@ -195,7 +212,7 @@ namespace VANH.StackMaker
 
         public void SetStartPosition(Transform mapStartPosition)
         {
-            transform.position = mapStartPosition.position;
+            transform.position = mapStartPosition.position + Vector3.up * 3f;
         }
     }
 }

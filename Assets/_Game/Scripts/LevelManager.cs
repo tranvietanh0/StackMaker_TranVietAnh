@@ -40,7 +40,9 @@ namespace VANH.StackMaker
         [SerializeField]private List<GameObject> levelPrefabs; 
 
         [SerializeField]private GameObject currentLevelPrefab; 
-        [SerializeField]private GameObject currentLevelInstance; 
+        [SerializeField]private GameObject currentLevelInstance;
+
+        [SerializeField] private List<Map> maps = new List<Map>();
 
         public void LoadLevel(int levelIndex)
         {
@@ -60,9 +62,20 @@ namespace VANH.StackMaker
 
             currentLevelInstance = Instantiate(currentLevelPrefab);
             currentLevelInstance.SetActive(true);
+            for (int i = 0; i < PlayerController.Instance.Bricks.Count; i++)
+            {
+                Destroy(PlayerController.Instance.Bricks[i]);
+            }
             // currentLevelInstance.transform.position = Vector3.zero;
             // currentLevelInstance.transform.localScale = Vector3.one;
             // currentLevelInstance.transform.rotation = Quaternion.identity;
+        }
+        public void PositionPlayer()
+        {
+            // lay ra tu PlayPrefs
+            int currentLevel = 2;
+            Map map = Instantiate(maps[currentLevel - 1]);
+            PlayerController.Instance.SetStartPosition(map.StartPosition);
         }
     }
 

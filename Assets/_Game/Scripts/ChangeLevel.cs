@@ -10,6 +10,7 @@ namespace VANH.StackMaker
         private void Update()
         {
             CheckPlayer();
+            GameManager.Instance().SaveGame(Pref.curPlayerLevel);
         }
         
         private void CheckPlayer()

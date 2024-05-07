@@ -11,5 +11,6 @@ namespace VANH.StackMaker
             set => PlayerPrefs.SetInt(GamePref.CurLevelId.ToString(), value);
             get => PlayerPrefs.GetInt(GamePref.CurLevelId.ToString(), 1);
         }
+        
     }
 }

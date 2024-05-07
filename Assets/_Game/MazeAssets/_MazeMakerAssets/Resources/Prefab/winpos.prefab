@@ -29391,6 +29391,7 @@ GameObject:
   - component: {fileID: 33082754106593514}
   - component: {fileID: 23513141896460911}
   - component: {fileID: 7295030689336441214}
+  - component: {fileID: 3279775499415981830}
   m_Layer: 8
   m_Name: zhongdian
   m_TagString: Destination
@@ -29485,6 +29486,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999905, y: 1.0000014, z: 1.0000031}
   m_Center: {x: 0.0000010728836, y: 0.00000059604656, z: 0.000000059604645}
+--- !u!114 &3279775499415981830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561487907547171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b33fb91bbf5f27a4c92c5448fad7aabd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1573991409181100
 GameObject:
   m_ObjectHideFlags: 0

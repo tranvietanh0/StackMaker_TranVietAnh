@@ -5,39 +5,10 @@ using UnityEngine;
 
 namespace VANH.StackMaker
 {
-    // public class LevelManager : GameObjectSingleton<LevelManager>
-    // {
-    //     
-    //     [SerializeField] private List<GameObject> levelList = new List<GameObject>();
-    //
-    //     [SerializeField] private List<Map> maps = new();
-    //
-    //     private static int currentLevel = 1;
-    //     public List<GameObject> LevelList
-    //     {
-    //         get => levelList;
-    //         set => levelList = value;
-    //     }
-    //
-    //     public int CurrentLevel
-    //     {
-    //         get => currentLevel;
-    //         set => currentLevel = value;
-    //     }
-    //     
-    //     public void PositionPlayer()
-    //     {
-    //         // lay ra tu PlayPrefs
-    //         Map map = Instantiate(maps[currentLevel - 1]);
-    //         PlayerController playerController = new PlayerController();
-    //         playerController.SetStartPosition(map.StartPosition);
-    //     }
-    //     
-    // }
-
     public class LevelManager : GameObjectSingleton<LevelManager>
     {
-        [SerializeField]private List<GameObject> levelPrefabs; 
+        public List<GameObject> levelPrefabs;
+        public int levelId;
 
         [SerializeField]private GameObject currentLevelPrefab; 
         [SerializeField]private GameObject currentLevelInstance;
@@ -52,31 +23,27 @@ namespace VANH.StackMaker
                 return;
             }
 
-           
             if (currentLevelInstance != null)
             {
+                Debug.Log("huy");
                 Destroy(currentLevelInstance);
             }
 
             currentLevelPrefab = levelPrefabs[levelIndex];
-
+            // PlayerController.Instance.OnInit();
             currentLevelInstance = Instantiate(currentLevelPrefab);
             currentLevelInstance.SetActive(true);
             for (int i = 0; i < PlayerController.Instance.Bricks.Count; i++)
             {
                 Destroy(PlayerController.Instance.Bricks[i]);
             }
+            Map map = Instantiate(maps[levelIndex]);
+            PlayerController.Instance.SetStartPosition(map.StartPosition);
             // currentLevelInstance.transform.position = Vector3.zero;
             // currentLevelInstance.transform.localScale = Vector3.one;
             // currentLevelInstance.transform.rotation = Quaternion.identity;
         }
-        public void PositionPlayer()
-        {
-            // lay ra tu PlayPrefs
-            int currentLevel = 2;
-            Map map = Instantiate(maps[currentLevel - 1]);
-            PlayerController.Instance.SetStartPosition(map.StartPosition);
-        }
+        
     }
 
 }

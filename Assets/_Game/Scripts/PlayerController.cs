@@ -49,6 +49,7 @@ namespace VANH.StackMaker
             Move();
             if (CheckBrick())
             {
+                player.gameObject.transform.GetChild(0).gameObject.tag = GameTag.Player.ToString();
                 AddBrick();
             }
             if(CheckUnBrick())
@@ -59,6 +60,8 @@ namespace VANH.StackMaker
 
         public void OnInit()
         {
+            // player.gameObject.tag = GameTag.Player.ToString();
+            // player.gameObject.transform.GetChild(0).gameObject.tag = GameTag.Player.ToString();
             m_direction = Direction.None;
         }
 

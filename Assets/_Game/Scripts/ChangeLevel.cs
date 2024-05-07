@@ -21,8 +21,15 @@ namespace VANH.StackMaker
                 if (hit.collider.CompareTag(GameTag.Player.ToString()))
                 {
                     PlayerController.Instance.OnInit();
-                    LevelManager.Instance().LoadLevel(1);
-                    LevelManager.Instance().PositionPlayer();
+                    hit.transform.gameObject.tag = "Untagged";
+                    Debug.Log(Pref.curPlayerLevel);
+                    LevelManager.Instance().LoadLevel(Pref.curPlayerLevel);
+                    Pref.curPlayerLevel++;
+                    if (Pref.curPlayerLevel > LevelManager.Instance().levelPrefabs.Count)
+                    {
+                        Pref.curPlayerLevel = 0;
+                        Debug.Log("vl");
+                    }
                 }
             }
         }

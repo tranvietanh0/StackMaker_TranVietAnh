@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,13 +7,23 @@ namespace VANH.StackMaker
 {
     public class GameManager : GameObjectSingleton<GameManager>
     {
+        [SerializeField] private UIManager guiMng;
 
-        private void Start()
+        private void Awake()
         {
+            guiMng.ShowGameGUI(false);
+        }
+
+        
+
+        public void PlayGame()
+        {
+            guiMng.ShowGameGUI(true);
+            guiMng.UpdateScore();
             if (PlayerPrefs.HasKey(GamePref.CurLevelId.ToString()))
             {
                 int lastPlayedLevel = PlayerPrefs.GetInt(GamePref.CurLevelId.ToString());
-                LevelManager.Instance().LoadLevel(lastPlayedLevel);
+                LevelManager.Instance().LoadLevel(lastPlayedLevel - 1);
             }
             else
             {
@@ -20,6 +31,15 @@ namespace VANH.StackMaker
             }
         }
 
+        public void SelectLevel()
+        {
+            guiMng.ShowLevelSelect(true);
+        }
+
+        public void Back()
+        {
+            guiMng.ShowLevelSelect(false);
+        }
         public void SaveGame(int currentLevel)
         {
             // Lưu level hiện tại

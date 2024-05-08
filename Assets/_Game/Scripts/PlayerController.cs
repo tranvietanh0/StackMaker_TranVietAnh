@@ -60,7 +60,7 @@ namespace VANH.StackMaker
             {
                 player.gameObject.transform.GetChild(0).gameObject.tag = GameTag.Player.ToString();
                 AddBrick();
-                score = m_brickStack.Count;
+                score++;
             }
             if(CheckUnBrick())
             {

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 namespace VANH.StackMaker
@@ -9,7 +10,8 @@ namespace VANH.StackMaker
     {
         public GameObject homeGUI;
         public GameObject gameGUI;
-        public Text mainScoreTxt;
+        public GameObject levelSelectDialog;
+        public TextMeshProUGUI mainScoreTxt;
 
         private void Start()
         {
@@ -29,11 +31,27 @@ namespace VANH.StackMaker
             }
         }
 
+        public void ShowLevelSelect(bool isShow)
+        {
+            if (levelSelectDialog)
+            {
+                levelSelectDialog.SetActive(isShow);
+            }
+        }
+
+        // public void BackToMenu(bool isShow)
+        // {
+        //     if (backDialog)
+        //     {
+        //         backDialog.SetActive(isShow);
+        //     }
+        // }
+
         public void UpdateScore()
         {
             if (mainScoreTxt)
             {
-                mainScoreTxt = PlayerController.Instance.score.ToString();
+                mainScoreTxt.text = PlayerController.Instance.score.ToString();
             }
         }
     }

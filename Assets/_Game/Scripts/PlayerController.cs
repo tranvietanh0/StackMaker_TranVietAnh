@@ -60,7 +60,6 @@ namespace VANH.StackMaker
             {
                 player.gameObject.transform.GetChild(0).gameObject.tag = GameTag.Player.ToString();
                 AddBrick();
-                score++;
             }
             if(CheckUnBrick())
             {
@@ -73,6 +72,7 @@ namespace VANH.StackMaker
             // player.gameObject.tag = GameTag.Player.ToString();
             // player.gameObject.transform.GetChild(0).gameObject.tag = GameTag.Player.ToString();
             m_direction = Direction.None;
+            score = 0;
         }
 
         private void CheckInput()
@@ -154,6 +154,8 @@ namespace VANH.StackMaker
                 if (hit.collider.CompareTag(GameTag.Brick.ToString()))
                 {
                     hit.collider.gameObject.SetActive(false);
+                    score++;
+                    UIManager.Instance().UpdateScore();
                     return true;
                 }
             }

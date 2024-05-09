@@ -34,6 +34,7 @@ namespace VANH.StackMaker
     public enum GamePref
     {
         CurLevelId,
+        Score,
         LevelUnlocked
     }
 }

@@ -17,6 +17,7 @@ namespace VANH.StackMaker
 
         public void LoadLevel(int levelIndex)
         {
+            PlayerController.Instance.OnInit();
             if (levelIndex < 0 || levelIndex >= levelPrefabs.Count)
             {
                 Debug.LogWarning("Level index out of range!");
@@ -30,7 +31,6 @@ namespace VANH.StackMaker
             }
 
             currentLevelPrefab = levelPrefabs[levelIndex];
-            // PlayerController.Instance.OnInit();
             currentLevelInstance = Instantiate(currentLevelPrefab);
             currentLevelInstance.SetActive(true);
             for (int i = 0; i < PlayerController.Instance.Bricks.Count; i++)
@@ -39,9 +39,9 @@ namespace VANH.StackMaker
             }
             Map map = Instantiate(maps[levelIndex]);
             PlayerController.Instance.SetStartPosition(map.StartPosition);
-            // currentLevelInstance.transform.position = Vector3.zero;
-            // currentLevelInstance.transform.localScale = Vector3.one;
-            // currentLevelInstance.transform.rotation = Quaternion.identity;
+            //tat di level select ui
+            UIManager.Instance().TurnOffSelectDialog();
+            UIManager.Instance().homeGUI.SetActive(false);
         }
         
     }

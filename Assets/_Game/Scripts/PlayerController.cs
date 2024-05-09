@@ -113,7 +113,7 @@ namespace VANH.StackMaker
         private void Move()
         {
             Vector3 vectorDirection = GetDirection(m_direction);
-            Ray ray = new Ray(transform.position + vectorDirection * 0.5f, Vector3.down);
+            Ray ray = new Ray(transform.position + vectorDirection * 0.6f, Vector3.down);
             RaycastHit hit;
             int countBrick = 0;
             int countUnBrick = 0;

@@ -18,6 +18,7 @@ namespace VANH.StackMaker
 
         public void PlayGame()
         {
+            PlayerController.Instance.OnInit();
             guiMng.ShowGameGUI(true);
             guiMng.UpdateScore();
             if (PlayerPrefs.HasKey(GamePref.CurLevelId.ToString()))

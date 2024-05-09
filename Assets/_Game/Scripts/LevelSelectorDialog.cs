@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,9 +29,8 @@ namespace VANH.StackMaker
                 int levelIndex = i;
                 buttonComponent.onClick.AddListener(() => LevelManager.Instance().LoadLevel(levelIndex - 1));
                 // button.GetComponentInChildren<Text>().text = "Level " + i;
+                // PlayerController.Instance.OnInit();
             }
         }
-
-        
     }
 }

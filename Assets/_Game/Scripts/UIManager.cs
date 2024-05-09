@@ -46,6 +46,13 @@ namespace VANH.StackMaker
         //         backDialog.SetActive(isShow);
         //     }
         // }
+        public void TurnOffSelectDialog()
+        {
+            if (levelSelectDialog)
+            {
+                levelSelectDialog.SetActive(false);
+            }
+        }
 
         public void UpdateScore()
         {

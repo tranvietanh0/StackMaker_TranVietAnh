@@ -18,18 +18,18 @@ namespace VANH.StackMaker
 
         public void PlayGame()
         {
-            PlayerController.Instance.OnInit();
             guiMng.ShowGameGUI(true);
             guiMng.UpdateScore();
             if (PlayerPrefs.HasKey(GamePref.CurLevelId.ToString()))
             {
                 int lastPlayedLevel = PlayerPrefs.GetInt(GamePref.CurLevelId.ToString());
-                LevelManager.Instance().LoadLevel(lastPlayedLevel - 1);
+                LevelManager.Instance().LoadLevel(lastPlayedLevel);
             }
             else
             {
                 LevelManager.Instance().LoadLevel(0);
             }
+            PlayerController.Instance.OnInit();
         }
 
         public void SelectLevel()
@@ -40,6 +40,21 @@ namespace VANH.StackMaker
         public void Back()
         {
             guiMng.ShowLevelSelect(false);
+        }
+
+        public void Retry()
+        {
+            Debug.Log("da bam retry");
+            Debug.Log(Pref.curPlayerLevel);
+            LevelManager.Instance().LoadLevel(Pref.curPlayerLevel);
+        }
+
+        public void NextLevel()
+        {
+            Debug.Log("da bam next");
+            Debug.Log(Pref.curPlayerLevel);
+            Pref.curPlayerLevel++;
+            LevelManager.Instance().LoadLevel(Pref.curPlayerLevel);
         }
         public void SaveGame(int currentLevel)
         {

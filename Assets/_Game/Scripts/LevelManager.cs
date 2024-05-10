@@ -11,13 +11,12 @@ namespace VANH.StackMaker
         public int levelId;
 
         [SerializeField]private GameObject currentLevelPrefab; 
-        [SerializeField]private GameObject currentLevelInstance;
+        [SerializeField]public GameObject currentLevelInstance;
 
         [SerializeField] private List<Map> maps = new List<Map>();
 
         public void LoadLevel(int levelIndex)
         {
-            PlayerController.Instance.OnInit();
             if (levelIndex < 0 || levelIndex >= levelPrefabs.Count)
             {
                 Debug.LogWarning("Level index out of range!");
@@ -42,6 +41,8 @@ namespace VANH.StackMaker
             //tat di level select ui
             UIManager.Instance().TurnOffSelectDialog();
             UIManager.Instance().homeGUI.SetActive(false);
+            UIManager.Instance().winGUI.SetActive(false);
+            PlayerController.Instance.OnInit();
         }
         
     }

@@ -24,8 +24,10 @@ namespace VANH.StackMaker
                     PlayerController.Instance.OnInit();
                     hit.transform.gameObject.tag = "Untagged";
                     Debug.Log(Pref.curPlayerLevel);
-                    LevelManager.Instance().LoadLevel(Pref.curPlayerLevel);
-                    Pref.curPlayerLevel++;
+                    // LevelManager.Instance().LoadLevel(Pref.curPlayerLevel);
+                    UIManager.Instance().winGUI.SetActive(true);
+                    Destroy(LevelManager.Instance().currentLevelInstance);
+                    // Pref.curPlayerLevel++;
                     if (Pref.curPlayerLevel > LevelManager.Instance().levelPrefabs.Count)
                     {
                         Pref.curPlayerLevel = 0;

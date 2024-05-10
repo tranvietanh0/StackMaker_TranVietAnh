@@ -45,13 +45,10 @@ namespace VANH.StackMaker
             else 
             { 
                 Instance = this; 
-            } 
+            }
         }
 
-        private void Start()
-        {
-            
-        }
+        
         private void Update()
         {
             CheckInput();
@@ -61,7 +58,8 @@ namespace VANH.StackMaker
                 player.gameObject.transform.GetChild(0).gameObject.tag = GameTag.Player.ToString();
                 AddBrick();
             }
-            if(CheckUnBrick())
+
+            if (CheckUnBrick())
             {
                 RemoveBrick();
             }
@@ -69,8 +67,6 @@ namespace VANH.StackMaker
 
         public void OnInit()
         {
-            // player.gameObject.tag = GameTag.Player.ToString();
-            // player.gameObject.transform.GetChild(0).gameObject.tag = GameTag.Player.ToString();
             m_direction = Direction.None;
             score = 0;
         }
@@ -97,7 +93,7 @@ namespace VANH.StackMaker
                         m_direction = Direction.Left;
                     }
                 }
-                else
+                else if(Math.Abs(dir.x) < Mathf.Abs(dir.y))
                 {
                     if (dir.y > 0)
                     {
@@ -107,6 +103,10 @@ namespace VANH.StackMaker
                     {
                         m_direction = Direction.Backward;
                     }
+                }
+                else
+                {
+                    m_direction = Direction.None;
                 }
             }
         }

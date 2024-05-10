@@ -10,6 +10,7 @@ namespace VANH.StackMaker
     {
         public GameObject homeGUI;
         public GameObject gameGUI;
+        public GameObject winGUI;
         public GameObject levelSelectDialog;
         public TextMeshProUGUI mainScoreTxt;
 
@@ -39,6 +40,8 @@ namespace VANH.StackMaker
             }
         }
 
+        
+
         // public void BackToMenu(bool isShow)
         // {
         //     if (backDialog)
@@ -51,6 +54,14 @@ namespace VANH.StackMaker
             if (levelSelectDialog)
             {
                 levelSelectDialog.SetActive(false);
+            }
+        }
+
+        public void ShowWinGUI(bool isShow)
+        {
+            if (winGUI)
+            {
+                winGUI.SetActive(isShow);
             }
         }
 

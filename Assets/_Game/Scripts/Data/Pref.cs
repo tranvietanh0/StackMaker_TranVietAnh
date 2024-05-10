@@ -9,7 +9,7 @@ namespace VANH.StackMaker
         public static int curPlayerLevel
         {
             set => PlayerPrefs.SetInt(GamePref.CurLevelId.ToString(), value);
-            get => PlayerPrefs.GetInt(GamePref.CurLevelId.ToString(), 1);
+            get => PlayerPrefs.GetInt(GamePref.CurLevelId.ToString(), 0);
         }
 
         public static int score

@@ -14,8 +14,29 @@ namespace VANH.StackMaker
             guiMng.ShowGameGUI(false);
         }
 
-        
+        private void Update()
+        {
+            if (guiMng.settingDialog.activeSelf)
+            {
+                PauseGame();
+            }
+        }
 
+        public void PauseGame()
+        {
+            Time.timeScale = 0f;
+        }
+
+        public void ResumeGame()
+        {
+            Time.timeScale = 1f;
+            guiMng.settingDialog.SetActive(false);
+        }
+
+        public void SelectSetting()
+        {
+            guiMng.settingDialog.SetActive(true);
+        }
         public void PlayGame()
         {
             guiMng.ShowGameGUI(true);
@@ -46,6 +67,12 @@ namespace VANH.StackMaker
         {
             Debug.Log("da bam retry");
             Debug.Log(Pref.curPlayerLevel);
+            LevelManager.Instance().LoadLevel(Pref.curPlayerLevel);
+        }
+
+        public void RetryInSetting()
+        {
+            PlayerController.Instance.OnInit();
             LevelManager.Instance().LoadLevel(Pref.curPlayerLevel);
         }
 

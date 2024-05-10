@@ -12,6 +12,7 @@ namespace VANH.StackMaker
         public GameObject gameGUI;
         public GameObject winGUI;
         public GameObject levelSelectDialog;
+        public GameObject settingDialog;
         public TextMeshProUGUI mainScoreTxt;
 
         private void Start()
@@ -39,7 +40,6 @@ namespace VANH.StackMaker
                 levelSelectDialog.SetActive(isShow);
             }
         }
-
         
 
         // public void BackToMenu(bool isShow)

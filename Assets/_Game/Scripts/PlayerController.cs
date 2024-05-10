@@ -74,6 +74,9 @@ namespace VANH.StackMaker
 
         public void OnInit()
         {
+            Time.timeScale = 1f;
+            RemoveAllBrick();
+            SetStartPosition(LevelManager.Instance().maps[Pref.curPlayerLevel].StartPosition);
             m_direction = Direction.None;
             score = 0;
         }
@@ -212,6 +215,17 @@ namespace VANH.StackMaker
                 Destroy(destroyBrick);
                 playerAnim.transform.position += Vector3.down * 0.3f;
                 unBrickChild.gameObject.SetActive(true);    
+            }
+        }
+
+        private void RemoveAllBrick()
+        {
+            GameObject playerAnim = player.transform.GetChild(0).gameObject;
+            while (m_brickStack.Count > 0)
+            {
+                GameObject destroyBrick = m_brickStack.Pop().gameObject;
+                Destroy(destroyBrick);
+                playerAnim.transform.position += Vector3.down * 0.3f;
             }
         }
 

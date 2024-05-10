@@ -13,7 +13,7 @@ namespace VANH.StackMaker
         [SerializeField]private GameObject currentLevelPrefab; 
         [SerializeField]public GameObject currentLevelInstance;
 
-        [SerializeField] private List<Map> maps = new List<Map>();
+        [SerializeField] public List<Map> maps = new List<Map>();
 
         public void LoadLevel(int levelIndex)
         {
@@ -43,6 +43,7 @@ namespace VANH.StackMaker
             UIManager.Instance().TurnOffSelectDialog();
             UIManager.Instance().homeGUI.SetActive(false);
             UIManager.Instance().winGUI.SetActive(false);
+            UIManager.Instance().settingDialog.SetActive(false);
             PlayerController.Instance.OnInit();
         }
         

@@ -39,6 +39,7 @@ namespace VANH.StackMaker
             Map map = Instantiate(maps[levelIndex]);
             PlayerController.Instance.SetStartPosition(map.StartPosition);
             //tat di level select ui
+            UIManager.Instance().gameGUI.SetActive(true);
             UIManager.Instance().TurnOffSelectDialog();
             UIManager.Instance().homeGUI.SetActive(false);
             UIManager.Instance().winGUI.SetActive(false);

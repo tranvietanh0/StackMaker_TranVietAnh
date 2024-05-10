@@ -48,10 +48,17 @@ namespace VANH.StackMaker
             }
         }
 
-        
-        private void Update()
+        private void Start()
         {
             CheckInput();
+        }
+
+        private void Update()
+        {
+            if (Vector3.Distance(transform.position, m_targetPos) < 0.1f)
+            {
+                CheckInput();
+            }
             Move();
             if (CheckBrick())
             {

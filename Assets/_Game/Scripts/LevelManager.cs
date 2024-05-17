@@ -26,7 +26,7 @@ namespace VANH.StackMaker
             if (currentLevelInstance != null)
             {
                 Debug.Log("huy");
-                Destroy(currentLevelInstance);
+                currentLevelInstance.SetActive(false);
             }
 
             currentLevelPrefab = levelPrefabs[levelIndex];

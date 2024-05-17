@@ -76,7 +76,7 @@ namespace VANH.StackMaker
         {
             Time.timeScale = 1f;
             RemoveAllBrick();
-            SetStartPosition(LevelManager.Instance().maps[Pref.curPlayerLevel].StartPosition);
+            // SetStartPosition(LevelManager.Instance().maps[Pref.curPlayerLevel].StartPosition);
             m_direction = Direction.None;
             score = 0;
         }
@@ -249,6 +249,8 @@ namespace VANH.StackMaker
         public void SetStartPosition(Transform mapStartPosition)
         {
             transform.position = mapStartPosition.position + Vector3.up * 3f;
+            Debug.Log(mapStartPosition.position);
+            Debug.Log("set vi tri");
         }
     }
 }

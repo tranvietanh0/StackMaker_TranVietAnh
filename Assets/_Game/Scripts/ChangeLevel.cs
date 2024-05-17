@@ -31,7 +31,6 @@ namespace VANH.StackMaker
                     if (Pref.curPlayerLevel > LevelManager.Instance().levelPrefabs.Count)
                     {
                         Pref.curPlayerLevel = 0;
-                        Debug.Log("vl");
                     }
                 }
             }

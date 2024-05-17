@@ -987,7 +987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 361906994}
   m_Layer: 0
-  m_Name: ====GameManger====
+  m_Name: ====GameManager====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1905,6 +1905,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784067722}
   m_CullTransparentMesh: 1
+--- !u!1 &808961516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 808961517}
+  m_Layer: 5
+  m_Name: Level4Btn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &808961517
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808961516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1840165564}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &840388291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,13 +1988,17 @@ MonoBehaviour:
   - {fileID: 4144285337048971356, guid: fa61e028d656bf84c878fb12193f2c9d, type: 3}
   - {fileID: 4144285337048971356, guid: bacda1f00f6de7c4eb0fd82c02878d2b, type: 3}
   - {fileID: 1364780405397670700, guid: 7c38569799aa93f4ebb0f96579349397, type: 3}
+  - {fileID: 5345884326643289624, guid: 58b68b6da2defb54fb67b039238140ea, type: 3}
+  - {fileID: 7369787655284621832, guid: 8c3c8f4368550934c8afa811dc09968f, type: 3}
   levelId: 0
-  currentLevelPrefab: {fileID: 0}
-  currentLevelInstance: {fileID: 0}
+  currentLevelPrefab: {fileID: 4144285337048971356, guid: fa61e028d656bf84c878fb12193f2c9d, type: 3}
+  currentLevelInstance: {fileID: 4144285337048971356, guid: fa61e028d656bf84c878fb12193f2c9d, type: 3}
   maps:
   - {fileID: 2700165609932836111, guid: fa61e028d656bf84c878fb12193f2c9d, type: 3}
   - {fileID: 1204708276573808279, guid: bacda1f00f6de7c4eb0fd82c02878d2b, type: 3}
   - {fileID: 3804009248693678613, guid: 7c38569799aa93f4ebb0f96579349397, type: 3}
+  - {fileID: -3541371095691388442, guid: 58b68b6da2defb54fb67b039238140ea, type: 3}
+  - {fileID: 499308468886863666, guid: 8c3c8f4368550934c8afa811dc09968f, type: 3}
 --- !u!1 &869595476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2607,6 +2646,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1281257203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1281257204}
+  m_Layer: 5
+  m_Name: Level5Btn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1281257204
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281257203}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1840165564}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1285585279
 GameObject:
   m_ObjectHideFlags: 0
@@ -4372,6 +4446,8 @@ RectTransform:
   - {fileID: 1700075684}
   - {fileID: 515745654}
   - {fileID: 472434558}
+  - {fileID: 808961517}
+  - {fileID: 1281257204}
   - {fileID: 2109269399}
   m_Father: {fileID: 1633973446}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4404,11 +4480,15 @@ MonoBehaviour:
   - {fileID: 1035844232604464878, guid: 24f644918706fcd4188877b121c3ccae, type: 3}
   - {fileID: 4092099564789930960, guid: 83c02b5d7b485fb4aa6e49054a423bee, type: 3}
   - {fileID: 4584361679509623298, guid: 4d5b67c0e4bf58443bbc62ed6fb519a7, type: 3}
+  - {fileID: 4584361679509623298, guid: 6af6be8a08928ba499d803c783178c72, type: 3}
+  - {fileID: 4584361679509623298, guid: 51057c4fbfa30f948a65676f5382dba4, type: 3}
   buttonParent:
   - {fileID: 1700075684}
   - {fileID: 515745654}
   - {fileID: 472434558}
-  numberOfLevels: 3
+  - {fileID: 808961517}
+  - {fileID: 1281257204}
+  numberOfLevels: 5
 --- !u!4 &1886923644 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2580899147284204563, guid: c84b41a4245d5c241bc7ff57b0cca3f4, type: 3}

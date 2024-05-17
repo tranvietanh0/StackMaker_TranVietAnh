@@ -9,11 +9,15 @@ namespace VANH.StackMaker
     {
         private void Update()
         {
-            CheckPlayer();
+            if (CheckPlayer())
+            {
+                UIManager.Instance().winGUI.SetActive(true);
+                Destroy(LevelManager.Instance().currentLevelInstance);
+            }
             GameManager.Instance().SaveGame(Pref.curPlayerLevel);
         }
         
-        private void CheckPlayer()
+        private bool CheckPlayer()
         {
             Ray ray = new Ray(transform.position - Vector3.forward, Vector3.up * 10f);
             RaycastHit hit;
@@ -25,15 +29,18 @@ namespace VANH.StackMaker
                     hit.transform.gameObject.tag = "Untagged";
                     Debug.Log(Pref.curPlayerLevel);
                     // LevelManager.Instance().LoadLevel(Pref.curPlayerLevel);
-                    UIManager.Instance().winGUI.SetActive(true);
-                    Destroy(LevelManager.Instance().currentLevelInstance);
                     // Pref.curPlayerLevel++;
                     if (Pref.curPlayerLevel > LevelManager.Instance().levelPrefabs.Count)
                     {
                         Pref.curPlayerLevel = 0;
                     }
+
+                    return true;
                 }
             }
+
+            return false;
         }
+
     }
 }

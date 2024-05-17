@@ -14,7 +14,7 @@ namespace VANH.StackMaker
         public List<Transform> buttonParent = new List<Transform>();
 
         // Số lượng level trong game
-        public int numberOfLevels = 3;
+        public int numberOfLevels = 5;
 
         private void Start()
         {
